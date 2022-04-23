@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Numerics;
+using UnityEngine;
 using UnityEngine.Serialization;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerMovingLegacy : MonoBehaviour
 {
@@ -11,16 +13,18 @@ public class PlayerMovingLegacy : MonoBehaviour
    /// </summary>
    void Update()
    {
+       var deltaX = 0f;
        if (Input.GetKey(KeyCode.A))
        {
-           var position = player.transform.position;
-           player.transform.position = new Vector3(position.x - Time.deltaTime * _speed, position.y);
+           deltaX = -Time.deltaTime * _speed;
        }
        else if (Input.GetKey(KeyCode.D))
        {
-           var position = player.transform.position;
-           player.transform.position = new Vector3(position.x + Time.deltaTime * _speed, position.y);
+           deltaX = Time.deltaTime * _speed;
        }
+       var deltaY = Input.GetAxis("Vertical");
        
+       var position = player.transform.position;
+       player.transform.position = new Vector3(position.x + deltaX, position.y + deltaY);
    }
 }
