@@ -9,22 +9,24 @@ public class PlayerMovingLegacy : MonoBehaviour
     private float _speed = 3.0f;
 
     /// <summary>
-   /// Update is called every frame, if the MonoBehaviour is enabled.
-   /// </summary>
-   void Update()
-   {
-       var deltaX = 0f;
-       if (Input.GetKey(KeyCode.A))
-       {
-           deltaX = -Time.deltaTime * _speed;
-       }
-       else if (Input.GetKey(KeyCode.D))
-       {
-           deltaX = Time.deltaTime * _speed;
-       }
-       var deltaY = Input.GetAxis("Vertical");
-       
-       var position = player.transform.position;
-       player.transform.position = new Vector3(position.x + deltaX, position.y + deltaY);
-   }
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (!Input.anyKey) return;
+        var deltaX = 0f;
+        if (Input.GetKey(KeyCode.A))
+        {
+            deltaX = -Time.deltaTime * _speed;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            deltaX = Time.deltaTime * _speed;
+        }
+
+        var deltaY = Input.GetAxis("Vertical");
+
+        var position = player.transform.position;
+        player.transform.position = new Vector3(position.x + deltaX, position.y + deltaY);
+    }
 }
