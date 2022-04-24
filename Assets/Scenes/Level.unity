@@ -397,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 186117589}
+  speed: 3
 --- !u!114 &186117594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +427,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 186117595}
-        m_MethodName: OnPlayerMotion
+        m_MethodName: OnHorizontalMotion
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -438,6 +439,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 08dc1523-bce8-434a-b3ba-a688dac3fafc
     m_ActionName: Hero/HorizontalMovement[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 186117595}
+        m_MethodName: OnVerticalMotion
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6498da35-5290-4bd5-afa3-bae86231934d
+    m_ActionName: Hero/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -455,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8924c9faaf00043cfa5fe9ffd36ae60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 186117593}
+  character: {fileID: 186117593}
 --- !u!1 &239378538
 GameObject:
   m_ObjectHideFlags: 0
