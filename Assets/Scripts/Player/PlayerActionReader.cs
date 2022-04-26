@@ -14,4 +14,12 @@ public class PlayerActionReader : MonoBehaviour
         var delta = context.ReadValue<Vector2>();
         character.Move(delta);
     }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.started && !character.IsJumping)
+        {
+            character.Jump();
+        }
+    }
 }
