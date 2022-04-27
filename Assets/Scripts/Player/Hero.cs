@@ -13,12 +13,16 @@ public class Hero : MonoBehaviour
 
     private Vector3 _motion;
     private Rigidbody2D _rigidbody2D;
-    private bool _isJumping;
+    private bool _canJump;
 
-    public bool IsJumping
+    /// <summary>
+    /// Бывают случаи, когда персонаж не должен прыгать.
+    /// Например в полете или в воде.
+    /// </summary>
+    public bool CanJump
     {
-        get => _isJumping;
-        set => _isJumping = value;
+        get => _canJump;
+        set => _canJump = value;
     }
 
     private void Awake()
@@ -40,18 +44,15 @@ public class Hero : MonoBehaviour
         player.transform.position += _motion * (speed * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Заставляет персонажа прыгать
+    /// </summary>
     public void Jump()
     {
+        if (!CanJump)
+        {
+            return;
+        }
         _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        IsJumping = false;
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        IsJumping = true;
     }
 }

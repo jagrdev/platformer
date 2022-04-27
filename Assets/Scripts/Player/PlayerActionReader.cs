@@ -17,9 +17,6 @@ public class PlayerActionReader : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && !character.IsJumping)
-        {
-            character.Jump();
-        }
+        character.Jump();
     }
 }
