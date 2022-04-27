@@ -492,7 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 186117589}
   speed: 3
-  jumpForce: 5
+  jumpForce: 5.1
 --- !u!114 &186117594
 MonoBehaviour:
   m_ObjectHideFlags: 0
