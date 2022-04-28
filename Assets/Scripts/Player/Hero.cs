@@ -39,9 +39,9 @@ public class Hero : MonoBehaviour
         _motion = motion;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        player.transform.position += _motion * (speed * Time.deltaTime);
+        _rigidbody2D.velocity = new Vector2(_motion.x * speed, _rigidbody2D.velocity.y);
     }
 
     /// <summary>
