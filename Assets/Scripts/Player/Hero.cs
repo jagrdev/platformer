@@ -13,17 +13,16 @@ namespace Player
 
         private Vector3 _motion;
         private Rigidbody2D _rigidbody2D;
-        private bool _canJump;
 
         /// <summary>
-        /// Бывают случаи, когда персонаж не должен прыгать.
-        /// Например в полете или в воде.
+        /// Признак, что персонаж находится на поверхности, с которой может прыгать
         /// </summary>
-        public bool CanJump
-        {
-            get => _canJump;
-            set => _canJump = value;
-        }
+        private bool _isGrounded;
+
+        /// <summary>
+        /// Признак, что персонаж прыгнул и находится в полете
+        /// </summary>
+        public bool IsJumping { get; set; }
 
         private void Awake()
         {
@@ -41,20 +40,19 @@ namespace Player
 
         private void FixedUpdate()
         {
-            _rigidbody2D.velocity = new Vector2(_motion.x * speed, _rigidbody2D.velocity.y);
-            CanJump = layerCheck.IsTouchingLayer;
-        }
-
-        /// <summary>
-        /// Заставляет персонажа прыгать
-        /// </summary>
-        public void Jump()
-        {
-            if (!CanJump)
+            _isGrounded = layerCheck.IsTouchingLayer;
+            var velocity = _rigidbody2D.velocity;
+            var x = _motion.x * speed;
+            var y = velocity.y;
+            if (y > 0 && !IsJumping)
             {
-                return;
+                y /= 3;
             }
-            _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            _rigidbody2D.velocity = new Vector2(x, y);
+            if (_isGrounded && IsJumping)
+            {
+                _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
     }
 }

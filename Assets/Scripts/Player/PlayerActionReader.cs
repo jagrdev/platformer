@@ -19,7 +19,16 @@ namespace Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            character.Jump();
+            Debug.Log(context.action.phase);
+            if (context.started)
+            {
+                character.IsJumping = true;
+            }
+            else if (context.canceled)
+            {
+                character.IsJumping = false;
+            }
+            
         }
     }
 }
