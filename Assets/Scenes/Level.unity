@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124371749}
   - component: {fileID: 124371750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165946691}
   - component: {fileID: 165946690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53d26608521d4af1b3159c30ee77dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 186117589}
   speed: 3
   jumpForce: 5.1
+  layerCheck: {fileID: 542252586}
 --- !u!114 &186117594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,7 +653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266969752}
   - component: {fileID: 266969751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268949007}
   - component: {fileID: 268949006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 429022239}
   - component: {fileID: 429022238}
   - component: {fileID: 429022240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,7 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474824335}
   - component: {fileID: 474824336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493917598}
   - component: {fileID: 493917597}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,8 +1171,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542252585}
-  - component: {fileID: 542252587}
   - component: {fileID: 542252586}
+  - component: {fileID: 542252587}
   m_Layer: 0
   m_Name: GroundDetect
   m_TagString: Untagged
@@ -1188,7 +1188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542252584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.36, z: 0}
+  m_LocalPosition: {x: 0, y: -0.358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186117591}
@@ -1206,9 +1206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd4081671f5b463986e697662791bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 186117593}
---- !u!58 &542252587
-CircleCollider2D:
+  checkingLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!61 &542252587
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1220,9 +1222,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.031506196, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.16016176
+  m_Size: {x: 0.43780872, y: 0.34210864}
+  m_EdgeRadius: 0
 --- !u!1 &546663366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 546663367}
   - component: {fileID: 546663368}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619745402}
   - component: {fileID: 619745401}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1119149686}
   - component: {fileID: 1119149687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,7 +2001,7 @@ GameObject:
   - component: {fileID: 1265652482}
   - component: {fileID: 1265652481}
   - component: {fileID: 1265652483}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2101,7 +2113,7 @@ GameObject:
   - component: {fileID: 1267544456}
   - component: {fileID: 1267544455}
   - component: {fileID: 1267544454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2237,7 +2249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1267998072}
   - component: {fileID: 1267998073}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2401,7 +2413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372354706}
   - component: {fileID: 1372354707}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2566,7 +2578,7 @@ GameObject:
   - component: {fileID: 1482411383}
   - component: {fileID: 1482411382}
   - component: {fileID: 1482411384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spikes (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2673,7 +2685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1564932626}
   - component: {fileID: 1564932625}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cave (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2768,7 @@ GameObject:
   - component: {fileID: 1700531289}
   - component: {fileID: 1700531288}
   - component: {fileID: 1700531290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2971,7 +2983,7 @@ GameObject:
   - component: {fileID: 1897229744}
   - component: {fileID: 1897229743}
   - component: {fileID: 1897229745}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spikes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3160,7 +3172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068595861}
   - component: {fileID: 2068595862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3273,7 +3285,7 @@ GameObject:
   - component: {fileID: 2133471695}
   - component: {fileID: 2133471694}
   - component: {fileID: 2133471696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

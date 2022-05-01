@@ -19,7 +19,6 @@ namespace Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            Debug.Log(context.action.phase);
             if (context.started)
             {
                 character.IsJumping = true;
