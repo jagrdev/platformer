@@ -18,11 +18,10 @@ namespace Player
         /// Признак, что персонаж находится на поверхности, с которой может прыгать
         /// </summary>
         private bool _isGrounded;
-
         /// <summary>
         /// Признак, что персонаж прыгнул и находится в полете
         /// </summary>
-        public bool IsJumping { get; set; }
+        private bool _isJumping;
 
         private void Awake()
         {
@@ -41,15 +40,16 @@ namespace Player
         private void FixedUpdate()
         {
             _isGrounded = layerCheck.IsTouchingLayer;
+            _isJumping = _motion.y > 0;
             var velocity = _rigidbody2D.velocity;
             var x = _motion.x * speed;
             var y = velocity.y;
-            if (y > 0 && !IsJumping)
+            if (y > 0 && !_isJumping)
             {
                 y /= 3;
             }
             _rigidbody2D.velocity = new Vector2(x, y);
-            if (_isGrounded && IsJumping)
+            if (_isGrounded && _isJumping)
             {
                 _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
