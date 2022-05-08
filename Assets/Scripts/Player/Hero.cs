@@ -51,6 +51,7 @@ namespace Player
         public void PutGoldenCoin()
         {
             _pocket.PutGoldenCoin();
+            ShowMoneyInThePocket();
         }
 
         private void FixedUpdate()
@@ -75,8 +76,8 @@ namespace Player
         private void ShowMoneyInThePocket()
         {
             var points = _pocket.SilverCoins + _pocket.GoldenCoins * 10;
-            Debug.Log($"All points: {points}\n" +
-                      $"Silver: {_pocket.SilverCoins}\n" +
+            Debug.Log($"All points: {points}\t" +
+                      $"Silver: {_pocket.SilverCoins}\t" +
                       $"Golden: {_pocket.GoldenCoins}");
         }
     }
