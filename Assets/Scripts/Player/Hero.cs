@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using System;
+using Model;
 using UnityEngine;
 
 namespace Player
@@ -12,8 +13,14 @@ namespace Player
         [SerializeField] private float jumpForce = 1.0f;
         [SerializeField] private LayerCheck layerCheck;
 
+        private static int IsRunning = Animator.StringToHash("is-running");
+        private static int IsGround = Animator.StringToHash("is-ground");
+        private static int VerticalVelocity = Animator.StringToHash("vertical-velocity");
+
         private Vector3 _motion;
         private Rigidbody2D _rigidbody2D;
+        private Animator _animator;
+        private SpriteRenderer _spriteRenderer;
 
         /// <summary>
         /// Признак, что персонаж находится на поверхности, с которой может прыгать
@@ -31,6 +38,8 @@ namespace Player
         {
             _pocket = new Pocket();
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         /// <summary>
@@ -70,6 +79,24 @@ namespace Player
             if (_isGrounded && _isJumping)
             {
                 _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+
+            UpdateSpriteDirection(x);
+
+            _animator.SetBool(IsRunning, x != 0);
+            _animator.SetBool(IsGround, _isGrounded);
+            _animator.SetFloat(VerticalVelocity, y);
+        }
+
+        private void UpdateSpriteDirection(float direction)
+        {
+            if (direction > 0)
+            {
+                _spriteRenderer.flipX = false;
+            }
+            else if (direction < 0)
+            {
+                _spriteRenderer.flipX = true;
             }
         }
 
