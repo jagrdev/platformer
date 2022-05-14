@@ -211,7 +211,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -515,7 +515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -698,9 +698,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -778,9 +783,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -985,7 +995,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -1134,9 +1144,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1283,7 +1298,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -1517,7 +1532,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -1684,9 +1699,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1800,9 +1820,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1880,7 +1905,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -1954,9 +1979,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -2087,13 +2117,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1815481285}
     m_Modifications:
-    - target: {fileID: 258768283, guid: ee2e8d17c9f3f43fca234f9b567cdc00, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -2971,9 +2997,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -3051,7 +3082,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -3483,9 +3514,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -3755,7 +3791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -3829,9 +3865,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4007,9 +4048,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4225,9 +4271,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4305,7 +4356,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -4379,7 +4430,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -4453,9 +4504,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4716,9 +4772,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4848,7 +4909,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -4958,7 +5019,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -5259,9 +5320,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -7207,7 +7273,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -7395,7 +7461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -7469,9 +7535,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -7555,9 +7626,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -7919,7 +7995,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
@@ -8177,9 +8253,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
+    - target: {fileID: 1387522594819910210, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutSilverCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 1387522594819910213, guid: 3eb0ff4af78f546a0aec8f1f81a39f3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -8318,16 +8399,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830595073}
     m_Modifications:
-    - target: {fileID: 2003439778580358497, guid: c65533f14322844538d82ebd8d44f2e3,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2003439778580358497, guid: c65533f14322844538d82ebd8d44f2e3,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -379105341
-      objectReference: {fileID: 0}
     - target: {fileID: 2003439778580358502, guid: c65533f14322844538d82ebd8d44f2e3,
         type: 3}
       propertyPath: m_Name
@@ -8537,7 +8608,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7101076339084678561, guid: ee2e8d17c9f3f43fca234f9b567cdc00,
         type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186117593}
     - target: {fileID: 7101076339084678562, guid: ee2e8d17c9f3f43fca234f9b567cdc00,

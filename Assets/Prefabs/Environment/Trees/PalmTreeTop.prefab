@@ -95,13 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e40384839394d03826685fe915b77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 8683632313750085214, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
-  - {fileID: 262518517033693272, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
-  - {fileID: 762285979657935423, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
-  - {fileID: 1400697303485121525, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
-  frameRate: 10
-  loop: 1
-  onComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  _frameRate: 10
+  _clips:
+  - _name: 
+    _sprites:
+    - {fileID: 8683632313750085214, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
+    - {fileID: 262518517033693272, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
+    - {fileID: 762285979657935423, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
+    - {fileID: 1400697303485121525, guid: 73a378bcca0614c068b46ea59710779a, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
