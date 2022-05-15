@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 186117592}
   - component: {fileID: 186117596}
   - component: {fileID: 186117597}
+  - component: {fileID: 186117598}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -506,6 +507,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &186117598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186117589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bfa06fa9add4aca82046f8d51dea84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _codes:
+  - Name: silver
+    Action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 186117593}
+          m_MethodName: PutSilverCoin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: gold
+    Action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 186117593}
+          m_MethodName: PutGoldenCoin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  _resetInputTime: 2
 --- !u!1001 &203006929
 PrefabInstance:
   m_ObjectHideFlags: 0
