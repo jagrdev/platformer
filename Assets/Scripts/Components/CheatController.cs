@@ -21,34 +21,38 @@ namespace Components
             Keyboard.current.onTextInput += OnTextInput;
         }
 
+        private void OnDestroy()
+        {
+            Keyboard.current.onTextInput -= OnTextInput;
+        }
+
         private void OnTextInput(char c)
         {
             _estimateResetTime = _resetInputTime;
             _cheatCode += c;
+            HandleInputCheat();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            if (_cheatCode != "")
+            if (_estimateResetTime < 0)
             {
-                HandleInputCheat();
+                _cheatCode = "";
+            }
+            else
+            {
+                _estimateResetTime -= Time.deltaTime;
             }
         }
 
         private void HandleInputCheat()
         {
-            _estimateResetTime -= Time.deltaTime;
-            if (_estimateResetTime > 0) return;
-            
             foreach (var cheatCode in _codes)
             {
-                if (cheatCode.Name == _cheatCode)
-                {
-                    cheatCode.Action.Invoke();
-                }
+                if (cheatCode.Name != _cheatCode) continue;
+                cheatCode.Action.Invoke();
+                _cheatCode = "";
             }
-            _cheatCode = "";
-            _estimateResetTime = _resetInputTime;
         }
     }
 
