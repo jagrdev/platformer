@@ -105,6 +105,22 @@ namespace Player
         /// </summary>
         private bool IsJumping { get; set; }
 
+        private bool IsFalling { get; set; }
+
+        /// <summary>
+        /// Определяет, можно ли совершить двойной прыжок
+        /// </summary>
+        private bool CanDoubleJump
+        {
+            get => !IsGrounded && IsFalling && IsJumping && !_wasDoubleJumped;
+            set => _wasDoubleJumped = !value;
+        }
+
+        /// <summary>
+        /// Признак, был ли совершен двойной прыжок
+        /// </summary>
+        private bool _wasDoubleJumped;
+
         private readonly LayerCheck _layerCheck;
         private readonly Rigidbody2D _rigidbody2D;
 
@@ -122,13 +138,29 @@ namespace Player
         public void Move(float speed, float jumpForce)
         {
             IsGrounded = _layerCheck.IsTouchingLayer;
+            if (IsGrounded) CanDoubleJump = true;
             IsJumping = Motion.y > 0;
+            IsFalling = _rigidbody2D.velocity.y < 0.01;
+            MakeJump(jumpForce);
+            MakeDoubleJump(jumpForce);
+            _rigidbody2D.velocity = GetVelocity(speed);
+        }
+
+        private void MakeJump(float jumpForce)
+        {
             if (IsGrounded && IsJumping)
             {
-                _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
             }
+        }
 
-            _rigidbody2D.velocity = GetVelocity(speed);
+        private void MakeDoubleJump(float jumpForce)
+        {
+            if (CanDoubleJump)
+            {
+                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+                CanDoubleJump = false;
+            }
         }
 
         private Vector2 GetVelocity(float speed)
@@ -145,6 +177,7 @@ namespace Player
             {
                 y /= 2;
             }
+
             return y;
         }
     }
