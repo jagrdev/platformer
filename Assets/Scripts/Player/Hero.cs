@@ -16,25 +16,10 @@ namespace Player
         private static readonly int IsGround = Animator.StringToHash("is-ground");
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
 
-        private Vector3 _motion;
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
-
-        /// <summary>
-        /// Признак, что персонаж находится на поверхности, с которой может прыгать
-        /// </summary>
-        private bool _isGrounded;
-
-        /// <summary>
-        /// Признак, что персонаж прыгнул и находится в полете
-        /// </summary>
-        private bool _isJumping;
-        
-        /// <summary>
-        /// Можно ли сделать двойной прыжок
-        /// </summary>
-        private bool _canDoubleJump;
+        private HeroMovements _heroMovements;
 
         /// <summary>
         /// Карман с предметами
@@ -47,6 +32,7 @@ namespace Player
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _heroMovements = new HeroMovements(layerCheck, _rigidbody2D);
         }
 
         /// <summary>
@@ -55,7 +41,7 @@ namespace Player
         /// <param name="motion">Отрицательное значение двигает влево, положительное вправо</param>
         public void SetMotion(Vector3 motion)
         {
-            _motion = motion;
+            _heroMovements.Motion = motion;
         }
 
         public void PutSilverCoin()
@@ -72,42 +58,9 @@ namespace Player
 
         private void FixedUpdate()
         {
-            Move();
+            _heroMovements.Move(speed, jumpForce);
             CorrectSpriteDirection(_rigidbody2D.velocity.x);
             SelectAnimation(_rigidbody2D.velocity);
-        }
-
-        private void Move()
-        {
-            _isGrounded = layerCheck.IsTouchingLayer;
-            _isJumping = _motion.y > 0;
-            if (_isGrounded && _isJumping)
-            {
-                _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-            _rigidbody2D.velocity = GetVelocity();
-        }
-
-        private Vector2 GetVelocity()
-        {
-            var x = GetXVelocity();
-            var y = GetYVelocity();
-
-            return new Vector2(x, y);
-        }
-
-        private float GetXVelocity() => _motion.x * speed;
-        
-        private float GetYVelocity()
-        {
-            var velocity = _rigidbody2D.velocity;
-            var y = velocity.y;
-            if (y > 0 && !_isJumping)
-            {
-                y /= 2;
-            }
-
-            return y;
         }
 
         private void CorrectSpriteDirection(float direction)
@@ -119,7 +72,7 @@ namespace Player
         private void SelectAnimation(Vector2 velocity)
         {
             _animator.SetBool(IsRunning, velocity.x != 0);
-            _animator.SetBool(IsGround, _isGrounded);
+            _animator.SetBool(IsGround, _heroMovements.IsGrounded);
             _animator.SetFloat(VerticalVelocity, velocity.y);
         }
 
@@ -129,6 +82,70 @@ namespace Player
             Debug.Log($"All points: {points}\t" +
                       $"Silver: {_pocket.SilverCoins}\t" +
                       $"Golden: {_pocket.GoldenCoins}");
+        }
+    }
+
+    /// <summary>
+    /// Определяет логику движения персонажа(бег, прыжки, падения)
+    /// </summary>
+    internal class HeroMovements
+    {
+        /// <summary>
+        /// Вектор направления движения персонажа
+        /// </summary>
+        public Vector3 Motion { get; set; }
+
+        /// <summary>
+        /// Признак, что персонаж находится на поверхности, с которой может прыгать
+        /// </summary>
+        public bool IsGrounded { get; private set; }
+
+        /// <summary>
+        /// Признак, что персонаж находится в прыжке вверх
+        /// </summary>
+        private bool IsJumping { get; set; }
+
+        private readonly LayerCheck _layerCheck;
+        private readonly Rigidbody2D _rigidbody2D;
+
+        public HeroMovements(LayerCheck layerCheck, Rigidbody2D rigidbody2D)
+        {
+            _layerCheck = layerCheck;
+            _rigidbody2D = rigidbody2D;
+        }
+
+        /// <summary>
+        /// Перемещает персонажа
+        /// </summary>
+        /// <param name="speed">Скорость перемещения по горизонтали</param>
+        /// <param name="jumpForce">Сила импульса при прыжке</param>
+        public void Move(float speed, float jumpForce)
+        {
+            IsGrounded = _layerCheck.IsTouchingLayer;
+            IsJumping = Motion.y > 0;
+            if (IsGrounded && IsJumping)
+            {
+                _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+
+            _rigidbody2D.velocity = GetVelocity(speed);
+        }
+
+        private Vector2 GetVelocity(float speed)
+        {
+            var x = Motion.x * speed;
+            var y = InterruptJump(_rigidbody2D.velocity.y);
+
+            return new Vector2(x, y);
+        }
+
+        private float InterruptJump(float y)
+        {
+            if (y > 0 && !IsJumping)
+            {
+                y /= 2;
+            }
+            return y;
         }
     }
 }
