@@ -1,5 +1,4 @@
-﻿using System;
-using Model;
+﻿using Model;
 using UnityEngine;
 
 namespace Player
@@ -13,9 +12,9 @@ namespace Player
         [SerializeField] private float jumpForce = 1.0f;
         [SerializeField] private LayerCheck layerCheck;
 
-        private static int IsRunning = Animator.StringToHash("is-running");
-        private static int IsGround = Animator.StringToHash("is-ground");
-        private static int VerticalVelocity = Animator.StringToHash("vertical-velocity");
+        private static readonly int IsRunning = Animator.StringToHash("is-running");
+        private static readonly int IsGround = Animator.StringToHash("is-ground");
+        private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
 
         private Vector3 _motion;
         private Rigidbody2D _rigidbody2D;
@@ -31,7 +30,15 @@ namespace Player
         /// Признак, что персонаж прыгнул и находится в полете
         /// </summary>
         private bool _isJumping;
+        
+        /// <summary>
+        /// Можно ли сделать двойной прыжок
+        /// </summary>
+        private bool _canDoubleJump;
 
+        /// <summary>
+        /// Карман с предметами
+        /// </summary>
         private Pocket _pocket;
 
         private void Awake()
@@ -46,7 +53,7 @@ namespace Player
         /// Перемещение по горизонтали
         /// </summary>
         /// <param name="motion">Отрицательное значение двигает влево, положительное вправо</param>
-        public void Move(Vector3 motion)
+        public void SetMotion(Vector3 motion)
         {
             _motion = motion;
         }
@@ -65,39 +72,55 @@ namespace Player
 
         private void FixedUpdate()
         {
+            Move();
+            CorrectSpriteDirection(_rigidbody2D.velocity.x);
+            SelectAnimation(_rigidbody2D.velocity);
+        }
+
+        private void Move()
+        {
             _isGrounded = layerCheck.IsTouchingLayer;
             _isJumping = _motion.y > 0;
-            var velocity = _rigidbody2D.velocity;
-            var x = _motion.x * speed;
-            var y = velocity.y;
-            if (y > 0 && !_isJumping)
-            {
-                y /= 3;
-            }
-
-            _rigidbody2D.velocity = new Vector2(x, y);
             if (_isGrounded && _isJumping)
             {
                 _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
-
-            UpdateSpriteDirection(x);
-
-            _animator.SetBool(IsRunning, x != 0);
-            _animator.SetBool(IsGround, _isGrounded);
-            _animator.SetFloat(VerticalVelocity, y);
+            _rigidbody2D.velocity = GetVelocity();
         }
 
-        private void UpdateSpriteDirection(float direction)
+        private Vector2 GetVelocity()
         {
-            if (direction > 0)
+            var x = GetXVelocity();
+            var y = GetYVelocity();
+
+            return new Vector2(x, y);
+        }
+
+        private float GetXVelocity() => _motion.x * speed;
+        
+        private float GetYVelocity()
+        {
+            var velocity = _rigidbody2D.velocity;
+            var y = velocity.y;
+            if (y > 0 && !_isJumping)
             {
-                _spriteRenderer.flipX = false;
+                y /= 2;
             }
-            else if (direction < 0)
-            {
-                _spriteRenderer.flipX = true;
-            }
+
+            return y;
+        }
+
+        private void CorrectSpriteDirection(float direction)
+        {
+            if (direction == 0) return;
+            _spriteRenderer.flipX = direction < 0;
+        }
+
+        private void SelectAnimation(Vector2 velocity)
+        {
+            _animator.SetBool(IsRunning, velocity.x != 0);
+            _animator.SetBool(IsGround, _isGrounded);
+            _animator.SetFloat(VerticalVelocity, velocity.y);
         }
 
         private void ShowMoneyInThePocket()

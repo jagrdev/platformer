@@ -14,7 +14,7 @@ namespace Player
         public void OnMotion(InputAction.CallbackContext context)
         {
             var delta = context.ReadValue<Vector2>();
-            character.Move(delta);
+            character.SetMotion(delta);
         }
     }
 }
