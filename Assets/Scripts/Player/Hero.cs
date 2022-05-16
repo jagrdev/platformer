@@ -10,6 +10,7 @@ namespace Player
     {
         [SerializeField] private float speed = 3.0f;
         [SerializeField] private float jumpForce = 1.0f;
+        [SerializeField] private float _damageJumpForce = 1.0f;
         [SerializeField] private LayerCheck layerCheck;
 
         private static readonly int IsRunning = Animator.StringToHash("is-running");
@@ -60,14 +61,15 @@ namespace Player
         /// <summary>
         /// 
         /// </summary>
-        public void OnDamage()
+        public void TakeDamage()
         {
             _animator.SetTrigger(HasDamage);
+            _heroMovements.DamageJump(_damageJumpForce);
         }
 
         private void FixedUpdate()
         {
-            _heroMovements.Move(speed, jumpForce);
+            _heroMovements.Jump(speed, jumpForce);
             CorrectSpriteDirection(_rigidbody2D.velocity.x);
             SelectAnimation(_rigidbody2D.velocity);
         }
@@ -144,7 +146,7 @@ namespace Player
         /// </summary>
         /// <param name="speed">Скорость перемещения по горизонтали</param>
         /// <param name="jumpForce">Сила импульса при прыжке</param>
-        public void Move(float speed, float jumpForce)
+        public void Jump(float speed, float jumpForce)
         {
             IsGrounded = _layerCheck.IsTouchingLayer;
             if (IsGrounded) CanDoubleJump = true;
@@ -154,20 +156,25 @@ namespace Player
             MakeDoubleJump(jumpForce);
             _rigidbody2D.velocity = GetVelocity(speed);
         }
+        
+        public void DamageJump(float velocity)
+        {
+            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, velocity);
+        }
 
-        private void MakeJump(float jumpForce)
+        private void MakeJump(float velocity)
         {
             if (IsGrounded && IsJumping)
             {
-                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, velocity);
             }
         }
 
-        private void MakeDoubleJump(float jumpForce)
+        private void MakeDoubleJump(float velocity)
         {
             if (CanDoubleJump)
             {
-                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, velocity);
                 CanDoubleJump = false;
             }
         }
