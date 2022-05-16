@@ -15,6 +15,7 @@ namespace Player
         private static readonly int IsRunning = Animator.StringToHash("is-running");
         private static readonly int IsGround = Animator.StringToHash("is-ground");
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
+        private static readonly int HasDamage = Animator.StringToHash("damage");
 
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
@@ -54,6 +55,14 @@ namespace Player
         {
             _pocket.PutGoldenCoin();
             ShowMoneyInThePocket();
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public void OnDamage()
+        {
+            _animator.SetTrigger(HasDamage);
         }
 
         private void FixedUpdate()

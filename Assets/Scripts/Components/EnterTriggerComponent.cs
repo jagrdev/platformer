@@ -1,11 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class EnterTriggerComponent : MonoBehaviour
 {
-    [SerializeField] private String objectTag;
+    [SerializeField] private string objectTag;
     [SerializeField] private UnityEvent action;
     private void OnTriggerEnter2D(Collider2D col)
     {
