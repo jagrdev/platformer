@@ -59,7 +59,7 @@ namespace Player
         }
         
         /// <summary>
-        /// 
+        /// Получение повреждения
         /// </summary>
         public void TakeDamage()
         {
