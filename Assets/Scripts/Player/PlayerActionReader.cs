@@ -21,7 +21,6 @@ namespace Player
         {
             if (context.canceled)
             {
-                Debug.Log($"Interact with {context.action.name}");
                 _hero.Interact();
             }
         }
