@@ -21,7 +21,7 @@ namespace Player
         private static readonly int IsGround = Animator.StringToHash("is-ground");
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
         private static readonly int HasDamage = Animator.StringToHash("damage");
-        private static readonly int HasHeal = Animator.StringToHash("heal");
+        private static readonly int HasHealth = Animator.StringToHash("heal");
 
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
@@ -78,7 +78,7 @@ namespace Player
         /// </summary>
         public void TakeHealth()
         {
-            _animator.SetTrigger(HasHeal);
+            _animator.SetTrigger(HasHealth);
         }
 
         private void FixedUpdate()
