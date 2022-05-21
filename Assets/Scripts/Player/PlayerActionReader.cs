@@ -5,7 +5,7 @@ namespace Player
 {
     public class PlayerActionReader : MonoBehaviour
     {
-        [SerializeField] private Hero character;
+        [SerializeField] private Hero _hero;
 
         /// <summary>
         /// Перемещает игрока в нужном направлении
@@ -14,7 +14,16 @@ namespace Player
         public void OnMotion(InputAction.CallbackContext context)
         {
             var delta = context.ReadValue<Vector2>();
-            character.SetMotion(delta);
+            _hero.SetMotion(delta);
+        }
+
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                Debug.Log($"Interact with {context.action.name}");
+                _hero.Interact();
+            }
         }
     }
 }

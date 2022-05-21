@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using System;
+using Components;
+using Model;
 using UnityEngine;
 
 namespace Player
@@ -12,6 +14,8 @@ namespace Player
         [SerializeField] private float jumpForce = 1.0f;
         [SerializeField] private float _damageJumpForce = 1.0f;
         [SerializeField] private LayerCheck layerCheck;
+        [SerializeField] private float _interactionRadius;
+        [SerializeField] private LayerMask _interactionLayer;
 
         private static readonly int IsRunning = Animator.StringToHash("is-running");
         private static readonly int IsGround = Animator.StringToHash("is-ground");
@@ -22,6 +26,7 @@ namespace Player
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
         private HeroMovements _heroMovements;
+        private readonly Collider2D[] _interactionResult = new Collider2D[1];
 
         /// <summary>
         /// Карман с предметами
@@ -93,6 +98,24 @@ namespace Player
             Debug.Log($"All points: {points}\t" +
                       $"Silver: {_pocket.SilverCoins}\t" +
                       $"Golden: {_pocket.GoldenCoins}");
+        }
+
+        public void Interact()
+        {
+            var hit = Physics2D.OverlapCircleNonAlloc(
+                transform.position,
+                _interactionRadius,
+                _interactionResult,
+                _interactionLayer);
+
+            foreach (var interact in _interactionResult)
+            {
+                var interactable = interact.GetComponent<InteractableComponent>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
     }
 
