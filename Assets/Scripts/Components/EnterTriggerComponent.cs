@@ -1,15 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
-public class EnterTriggerComponent : MonoBehaviour
+namespace Components
 {
-    [SerializeField] private string objectTag;
-    [SerializeField] private UnityEvent action;
-    private void OnTriggerEnter2D(Collider2D col)
+    /// <summary>
+    /// Обработчик коллайдеров в режиме триггера
+    /// </summary>
+    public class EnterTriggerComponent : MonoBehaviour
     {
-        if (col.gameObject.CompareTag(objectTag))
+        [SerializeField] private string objectTag;
+        [SerializeField] private EnterEvent action;
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            action?.Invoke();
+            if (other.gameObject.CompareTag(objectTag))
+            {
+                action?.Invoke(other.gameObject);
+            }
+        }
+
+        [Serializable]
+        private class EnterEvent : UnityEvent<GameObject>
+        {
         }
     }
 }

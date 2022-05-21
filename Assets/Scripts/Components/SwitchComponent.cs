@@ -2,6 +2,9 @@
 
 namespace Components
 {
+    /// <summary>
+    /// Задействует анимацию переключателей
+    /// </summary>
     public class SwitchComponent : MonoBehaviour
     {
         [SerializeField] private Animator _animator;

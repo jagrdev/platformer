@@ -8,13 +8,23 @@ namespace Player
     public class DamageComponent : MonoBehaviour
     {
         [SerializeField] private float _damage;
+        [SerializeField] private float _health;
 
-        public void ApplyDamage(GameObject gameObject)
+        public void ApplyDamage(GameObject target)
         {
-            var healthComponent = gameObject.GetComponent<HealthComponent>();
+            var healthComponent = target.GetComponent<HealthComponent>();
             if (healthComponent != null)
             {
                 healthComponent.ApplyDamage(_damage);
+            }
+        }
+        
+        public void ApplyHealing(GameObject target)
+        {
+            var healthComponent = target.GetComponent<HealthComponent>();
+            if (healthComponent != null)
+            {
+                healthComponent.ApplyHealing(_health);
             }
         }
     }

@@ -2,24 +2,27 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// Обработчик столкновений твердых коллайдеров
-/// </summary>
-public class EnterCollisionComponent : MonoBehaviour
+namespace Components
 {
-    [SerializeField] private string _objectTag;
-    [SerializeField] private EnterEvent _onCollision;
-
-    private void OnCollisionEnter2D(Collision2D other)
+    /// <summary>
+    /// Обработчик столкновений твердых коллайдеров
+    /// </summary>
+    public class EnterCollisionComponent : MonoBehaviour
     {
-        if (other.gameObject.CompareTag(_objectTag))
+        [SerializeField] private string _objectTag;
+        [SerializeField] private EnterEvent _onCollision;
+
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            _onCollision?.Invoke(other.gameObject);
+            if (other.gameObject.CompareTag(_objectTag))
+            {
+                _onCollision?.Invoke(other.gameObject);
+            }
         }
-    }
 
-    [Serializable]
-    private class EnterEvent : UnityEvent<GameObject>
-    {
+        [Serializable]
+        private class EnterEvent : UnityEvent<GameObject>
+        {
+        }
     }
 }

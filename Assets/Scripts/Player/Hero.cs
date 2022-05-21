@@ -21,6 +21,7 @@ namespace Player
         private static readonly int IsGround = Animator.StringToHash("is-ground");
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
         private static readonly int HasDamage = Animator.StringToHash("damage");
+        private static readonly int HasHeal = Animator.StringToHash("heal");
 
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
@@ -70,6 +71,14 @@ namespace Player
         {
             _animator.SetTrigger(HasDamage);
             _heroMovements.DamageJump(_damageJumpForce);
+        }
+        
+        /// <summary>
+        /// Получение повреждения
+        /// </summary>
+        public void TakeHealth()
+        {
+            _animator.SetTrigger(HasHeal);
         }
 
         private void FixedUpdate()
