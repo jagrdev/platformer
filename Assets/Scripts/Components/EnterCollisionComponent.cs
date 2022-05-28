@@ -20,6 +20,14 @@ namespace Components
             }
         }
 
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag(_objectTag))
+            {
+                _onCollision?.Invoke(other.gameObject);
+            }
+        }
+
         [Serializable]
         private class EnterEvent : UnityEvent<GameObject>
         {

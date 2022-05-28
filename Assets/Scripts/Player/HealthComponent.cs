@@ -12,6 +12,7 @@ namespace Player
         [SerializeField] private UnityEvent _onDie;
 
         private float _currentHealth;
+        private bool _isInvulnerability;
 
         private void Awake()
         {
@@ -20,6 +21,8 @@ namespace Player
 
         public void ApplyDamage(float damage)
         {
+            Debug.Log($"ApplyDamage = {!_isInvulnerability}");
+            if (_isInvulnerability) return;
             _currentHealth -= damage;
             _onTakenDamage?.Invoke();
             if (_currentHealth <= 0)
@@ -36,6 +39,24 @@ namespace Player
                 _currentHealth = _health;
             }
             _onApplyHealth?.Invoke();
+        }
+
+        /// <summary>
+        /// Делает персонажа невоспримчивым к повреждениям
+        /// </summary>
+        public void SetInvulnerability()
+        {
+            _isInvulnerability = true;
+            Debug.Log($"_isInvulnerability = {_isInvulnerability}");
+        }
+        
+        /// <summary>
+        /// Делает персонажа повреждаемым
+        /// </summary>
+        public void SetVulnerability()
+        {
+            _isInvulnerability = false;
+            Debug.Log($"_isInvulnerability = {_isInvulnerability}");
         }
     }
 }

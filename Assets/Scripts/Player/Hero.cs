@@ -70,11 +70,10 @@ namespace Player
         public void TakeDamage()
         {
             _animator.SetTrigger(HasDamage);
-            _heroMovements.DamageJump(_damageJumpForce);
         }
         
         /// <summary>
-        /// Получение повреждения
+        /// Получение лечения
         /// </summary>
         public void TakeHealth()
         {
