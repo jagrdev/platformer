@@ -1,5 +1,4 @@
-﻿using System;
-using Components;
+﻿using Components;
 using Model;
 using UnityEngine;
 
@@ -12,7 +11,6 @@ namespace Player
     {
         [SerializeField] private float speed = 3.0f;
         [SerializeField] private float jumpForce = 1.0f;
-        [SerializeField] private float _damageJumpForce = 1.0f;
         [SerializeField] private LayerCheck layerCheck;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -26,7 +24,6 @@ namespace Player
 
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
-        private SpriteRenderer _spriteRenderer;
         private HeroMovements _heroMovements;
         private readonly Collider2D[] _interactionResult = new Collider2D[1];
 
@@ -40,7 +37,6 @@ namespace Player
             _pocket = new Pocket();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
             _heroMovements = new HeroMovements(layerCheck, _rigidbody2D);
         }
 
@@ -92,7 +88,7 @@ namespace Player
         {
             if (direction == 0) return;
             var scaleVector = new Vector3(direction < 0 ? -1 : 1, 1, 0);
-            _spriteRenderer.transform.localScale = scaleVector;
+            transform.localScale = scaleVector;
         }
 
         private void SelectAnimation(Vector2 velocity)
@@ -112,7 +108,7 @@ namespace Player
 
         public void Interact()
         {
-            var hit = Physics2D.OverlapCircleNonAlloc(
+            Physics2D.OverlapCircleNonAlloc(
                 transform.position,
                 _interactionRadius,
                 _interactionResult,
