@@ -16,6 +16,7 @@ namespace Player
         [SerializeField] private LayerCheck layerCheck;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
+        [SerializeField] private SpawnComponent _spawnComponent;
 
         private static readonly int IsRunning = Animator.StringToHash("is-running");
         private static readonly int IsGround = Animator.StringToHash("is-ground");
@@ -63,7 +64,7 @@ namespace Player
             _pocket.PutGoldenCoin();
             ShowMoneyInThePocket();
         }
-        
+
         /// <summary>
         /// Получение повреждения
         /// </summary>
@@ -71,7 +72,7 @@ namespace Player
         {
             _animator.SetTrigger(HasDamage);
         }
-        
+
         /// <summary>
         /// Получение лечения
         /// </summary>
@@ -90,7 +91,8 @@ namespace Player
         private void CorrectSpriteDirection(float direction)
         {
             if (direction == 0) return;
-            _spriteRenderer.flipX = direction < 0;
+            var scaleVector = new Vector3(direction < 0 ? -1 : 1, 1, 0);
+            _spriteRenderer.transform.localScale = scaleVector;
         }
 
         private void SelectAnimation(Vector2 velocity)
@@ -124,6 +126,11 @@ namespace Player
                     interactable.Interact();
                 }
             }
+        }
+
+        public void SpawnFootDust()
+        {
+            _spawnComponent.Spawn();
         }
     }
 
@@ -187,7 +194,7 @@ namespace Player
             MakeDoubleJump(jumpForce);
             _rigidbody2D.velocity = GetVelocity(speed);
         }
-        
+
         public void DamageJump(float velocity)
         {
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, velocity);

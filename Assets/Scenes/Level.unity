@@ -419,6 +419,7 @@ MonoBehaviour:
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 2048
+  _spawnComponent: {fileID: 1942718413}
 --- !u!114 &186117594
 MonoBehaviour:
   m_ObjectHideFlags: 0
