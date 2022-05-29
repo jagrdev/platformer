@@ -413,7 +413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpForce: 10
-  _damageJumpForce: 40
   layerCheck: {fileID: 542252586}
   _interactionRadius: 1
   _interactionLayer:
